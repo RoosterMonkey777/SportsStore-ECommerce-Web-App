@@ -20,6 +20,9 @@ var app = builder.Build();
 // use static content (js,css, images, ...)
 app.UseStaticFiles();
 
+//for composable url 
+app.MapControllerRoute("pagination","Products/Page{productPage}", new {Controller = "Home", action = "Index"});
+
 //registers the MVC Framework as a source of endpoints using default convention for mapping requests to classes and methods
 app.MapDefaultControllerRoute();
 

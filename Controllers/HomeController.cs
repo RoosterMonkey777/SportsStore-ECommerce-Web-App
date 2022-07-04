@@ -19,15 +19,18 @@ namespace SportsStore_ECommerce_Web_App.Controllers
 
         public ViewResult Index(int productPage = 1)=> 
             View(new ProductsListViewModel
-  {
-      Products = repository.Products.OrderBy(p => p.ProductID).Skip((productPage - 1) * PageSize).Take(PageSize),
-      PagingInfo = new PagingInfo
-      {
-          CurrentPage = productPage,
-          ItemsPerPage = PageSize,
-          TotalItems = repository.Products.Count()
-      }
-  });
+            {
+            Products = repository.Products // get the Product objects
+                .OrderBy(p => p.ProductID) //order them by the primary key
+                .Skip((productPage - 1) * PageSize) // skip over the products that occur before the start of the current page
+                .Take(PageSize), //take the number of products specified by the PageSize
+                PagingInfo = new PagingInfo
+            {
+                CurrentPage = productPage,
+                ItemsPerPage = PageSize,
+                TotalItems = repository.Products.Count()
+            }
+         });
 
     }
 }
