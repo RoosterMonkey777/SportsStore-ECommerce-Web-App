@@ -11,6 +11,9 @@ builder.Services.AddDbContext<StoreDbContext>(opts =>
     opts.UseSqlServer(builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
 });
 
+//The AddScoped method creates a service where each HTTP request gets its own repository object
+builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
+
 var app = builder.Build();
 
 // use static content (js,css, images, ...)
