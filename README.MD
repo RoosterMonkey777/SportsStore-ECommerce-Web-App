@@ -12,8 +12,10 @@
   * Model View Controller design pattern following best practices.  
   * Repository pattern to mediate data transfer between domain model layer and database.  
   * Incorporation of dependency injection through Services and Middleware.
+  
 
 ## ASP.NET CORE FEATURES
   * ASP.NET MVC
-  * Entity Framework 
-  * LINQ 
+  * LINQ
+  * Entity Framework Core 
+  * Microsoft SQL Server LocalDB database
