@@ -7,8 +7,8 @@ namespace SportsStore_ECommerce_Web_App.Models
         public static void EnsurePopulated(IApplicationBuilder app)
         {
             StoreDbContext context = app.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<StoreDbContext>();
-            
-        if (context.Database.GetPendingMigrations().Any())
+
+            if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
             }
@@ -79,8 +79,8 @@ namespace SportsStore_ECommerce_Web_App.Models
                     Price = 1200
                 }
                 );
-                
-            context.SaveChanges();
+
+                context.SaveChanges();
             }
         }
     }

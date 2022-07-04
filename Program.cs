@@ -6,7 +6,8 @@ var builder = WebApplication.CreateBuilder(args);
 // method sets up the shared objects required by applications using the MVC Framework and the Razor view engine
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<StoreDbContext>(opts => {
+builder.Services.AddDbContext<StoreDbContext>(opts =>
+{
     opts.UseSqlServer(
     builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
 });
@@ -22,5 +23,5 @@ app.UseStaticFiles();
 //registers the MVC Framework as a source of endpoints using default convention for mapping requests to classes and methods
 app.MapDefaultControllerRoute();
 
-SeedData.EnsurePopulated(app);  
+SeedData.EnsurePopulated(app);
 app.Run();
