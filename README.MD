@@ -11,7 +11,7 @@
   * Modern enterprise data-driven application.
   * Model View Controller design pattern following best practices.  
   * Repository pattern to mediate data transfer between domain model layer and database.  
-  * Dependency injection pattern incorporating loosely coupled components for better maintainability and less code duplication 
+  * Incorporation of dependency injection through Services and Middleware.
 
 ## ASP.NET CORE FEATURES
   * ASP.NET MVC
