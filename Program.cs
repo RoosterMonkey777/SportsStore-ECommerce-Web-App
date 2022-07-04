@@ -1,7 +1,16 @@
+using Microsoft.EntityFrameworkCore;
+using SportsStore_ECommerce_Web_App.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // method sets up the shared objects required by applications using the MVC Framework and the Razor view engine
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<StoreDbContext>(opts =>
+{
+    opts.UseSqlServer(builder.Configuration["ConnectionStrings:SportsStoreConnection"]);
+});
+
 var app = builder.Build();
 
 // use static content (js,css, images, ...)
